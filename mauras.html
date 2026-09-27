@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4512c" />
+  <meta name="description"
+    content="MAURAS — изготовление гибкой упаковки, пакетов, этикеток, флексопечать и глубокая печать в Ташкенте." />
+  <title>MAURAS — упаковка и печать в Ташкенте</title>
+  <style>
+    :root {
+      --bg: #fff9f4;
+      --surface: #ffffff;
+      --surface-2: #fff1e7;
+      --ink: #171717;
+      --muted: #6e6864;
+      --line: #eadfd8;
+      --accent: #f4512c;
+      --accent-2: #ff8c42;
+      --dark: #1c1714;
+      --shadow: 0 18px 55px rgba(75, 36, 17, .10);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      overflow-x: hidden
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 36px));
+      margin: auto
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255, 249, 244, .82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(234, 223, 216, .75)
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 20px
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(244, 81, 44, .25);
+      animation: brandPulse 3.8s ease-in-out infinite
+    }
+
+    @keyframes brandPulse {
+      50% {
+        transform: translateY(-2px) rotate(1deg);
+        box-shadow: 0 16px 34px rgba(244, 81, 44, .32)
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: #4f4945;
+      font-size: 14px;
+      font-weight: 700
+    }
+
+    .nav-links a {
+      transition: color .2s, transform .2s
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      transform: translateY(-1px)
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .lang {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 9px 11px;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer
+    }
+
+    .lang span {
+      opacity: .45
+    }
+
+    .lang .active {
+      opacity: 1;
+      color: var(--accent)
+    }
+
+    .phone {
+      font-weight: 900;
+      color: var(--accent);
+      font-size: 14px;
+      white-space: nowrap
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 24px;
+      cursor: pointer
+    }
+
+    .hero {
+      position: relative;
+      padding: 76px 0 54px;
+      min-height: 700px;
+      display: grid;
+      align-items: center
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 88% 14%, rgba(255, 140, 66, .22), transparent 27%),
+        radial-gradient(circle at 4% 38%, rgba(244, 81, 44, .10), transparent 29%),
+        linear-gradient(180deg, transparent, rgba(255, 255, 255, .35));
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 46px;
+      align-items: center
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid #f2d3c2;
+      background: #fff4eb;
+      border-radius: 999px;
+      color: #9a4127;
+      font-weight: 900;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      animation: fadeUp .7s both
+    }
+
+    .eyebrow i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(244, 81, 44, .12)
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 78px);
+      line-height: .98;
+      letter-spacing: -.065em;
+      margin: 20px 0 24px;
+      max-width: 760px;
+      animation: fadeUp .75s .08s both
+    }
+
+    .accent {
+      color: var(--accent)
+    }
+
+    .lead {
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 650px;
+      animation: fadeUp .75s .16s both
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+      animation: fadeUp .75s .24s both
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, background .2s
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(244, 81, 44, .22)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(244, 81, 44, .28)
+    }
+
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--line);
+      color: var(--ink)
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow)
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 21px;
+      color: #625a55;
+      font-size: 13px;
+      font-weight: 700;
+      animation: fadeUp .75s .3s both
+    }
+
+    .hero-note span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px
+    }
+
+    .check {
+      color: var(--accent);
+      font-weight: 1000
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 470px;
+      animation: fadeIn 1s .15s both
+    }
+
+    .visual-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #f0dfd2;
+      box-shadow: var(--shadow);
+      isolation: isolate
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(14, 14, 14, .12), transparent 45%, rgba(255, 140, 66, .26));
+      z-index: 2
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.02)
+    }
+
+    .visual-caption {
+      position: absolute;
+      z-index: 4;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 17px 18px;
+      border: 1px solid rgba(255, 255, 255, .24);
+      background: rgba(20, 15, 12, .56);
+      backdrop-filter: blur(14px);
+      border-radius: 19px;
+      color: #fff
+    }
+
+    .visual-caption b {
+      display: block;
+      font-size: 16px
+    }
+
+    .visual-caption span {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      opacity: .78
+    }
+
+    .float-badge {
+      position: absolute;
+      z-index: 5;
+      border-radius: 18px;
+      padding: 13px 14px;
+      background: #fff;
+      box-shadow: 0 18px 45px rgba(38, 24, 16, .18);
+      font-size: 12px;
+      font-weight: 900;
+      animation: float 4.5s ease-in-out infinite
+    }
+
+    .badge-one {
+      left: -24px;
+      top: 42px
+    }
+
+    .badge-two {
+      right: -21px;
+      top: 52%;
+      animation-delay: -1.4s
+    }
+
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-9px) rotate(-1deg)
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(.98)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .stats {
+      padding: 16px 0 70px
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center
+    }
+
+    .stat b {
+      display: block;
+      font-size: 26px
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      margin-top: 5px
+    }
+
+    section {
+      padding: 86px 0
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: end;
+      margin-bottom: 34px
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .13em
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4vw, 53px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      margin: 9px 0 0
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.6
+    }
+
+    .products {
+      background: #fff
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px
+    }
+
+    .product {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      background: linear-gradient(180deg, #fff, #fffaf7);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .product::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      right: -45px;
+      top: -45px;
+      background: rgba(244, 81, 44, .08)
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: #efcabc
+    }
+
+    .product-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      background: #fff0e7;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: 24px
+    }
+
+    .product h3 {
+      font-size: 19px;
+      margin: 18px 0 9px
+    }
+
+    .product p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+      margin: 0
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 11px;
+      font-weight: 900;
+      color: #8f482f;
+      background: #fff1e7;
+      padding: 7px 9px;
+      border-radius: 10px
+    }
+
+    .process {
+      background: var(--dark);
+      color: #fff
+    }
+
+    .process .section-copy {
+      color: #c7bfba
+    }
+
+    .process .kicker {
+      color: #ff9c72
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px
+    }
+
+    .step {
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 22px;
+      padding: 21px;
+      background: rgba(255, 255, 255, .04)
+    }
+
+    .step-num {
+      font-weight: 900;
+      color: #ff9c72;
+      font-size: 13px
+    }
+
+    .step h3 {
+      margin: 10px 0 8px;
+      font-size: 18px
+    }
+
+    .step p {
+      margin: 0;
+      color: #bdb5b0;
+      font-size: 14px;
+      line-height: 1.55
+    }
+
+    .estimator {
+      background: var(--surface-2)
+    }
+
+    .estimator-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 24px;
+      align-items: stretch
+    }
+
+    .estimate-card,
+    .info-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(80, 35, 12, .06)
+    }
+
+    .info-card {
+      background: linear-gradient(145deg, #241a16, #3a251c);
+      color: #fff;
+      position: relative;
+      overflow: hidden
+    }
+
+    .info-card::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 42px solid rgba(255, 140, 66, .18)
+    }
+
+    .info-card h3 {
+      font-size: 35px;
+      letter-spacing: -.04em;
+      line-height: 1.03;
+      margin: 0 0 15px;
+      max-width: 380px
+    }
+
+    .info-card p {
+      color: #d1c4bd;
+      line-height: 1.6
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0
+    }
+
+    .info-list div {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #eee6e1;
+      font-size: 14px
+    }
+
+    .info-list b {
+      color: #ff9c72
+    }
+
+    form {
+      display: grid;
+      gap: 12px
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .field {
+      display: grid;
+      gap: 7px
+    }
+
+    .field label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #5f5752
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 13px 14px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s
+    }
+
+    .field textarea {
+      min-height: 100px;
+      resize: vertical
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: #eea48e;
+      box-shadow: 0 0 0 4px rgba(244, 81, 44, .08)
+    }
+
+    .form-help {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.45
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px
+    }
+
+    .form-actions .btn {
+      flex: 1 1 180px
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      grid-template-rows: 240px 240px;
+      gap: 14px
+    }
+
+    .gallery-item {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #ead9cc;
+      position: relative
+    }
+
+    .gallery-item:first-child {
+      grid-row: 1 / 3
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05)
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 9px 11px;
+      border-radius: 11px;
+      background: rgba(22, 16, 13, .62);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      backdrop-filter: blur(8px)
+    }
+
+    .reviews {
+      background: #fff
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px
+    }
+
+    .reviews-main {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px
+    }
+
+    .rating-line {
+      display: flex;
+      gap: 16px;
+      align-items: center
+    }
+
+    .rating-big {
+      font-size: 60px;
+      font-weight: 950;
+      letter-spacing: -.07em
+    }
+
+    .stars {
+      color: #f3a21a;
+      letter-spacing: 2px;
+      font-size: 20px
+    }
+
+    .review {
+      border-top: 1px solid var(--line);
+      padding: 19px 0;
+      display: flex;
+      gap: 14px
+    }
+
+    .review:first-of-type {
+      margin-top: 12px
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, #ffd2bb, #fff0e7);
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #9d492e
+    }
+
+    .review p {
+      margin: 6px 0 0;
+      color: #5e5752;
+      line-height: 1.5;
+      font-size: 14px
+    }
+
+    .review b {
+      font-size: 14px
+    }
+
+    .mini-card {
+      border-radius: 28px;
+      background: #fff3ea;
+      border: 1px solid #f0d5c6;
+      padding: 27px
+    }
+
+    .mini-card h3 {
+      font-size: 27px;
+      line-height: 1.07;
+      letter-spacing: -.05em;
+      margin: 0 0 12px
+    }
+
+    .mini-card p {
+      color: #6c5f58;
+      line-height: 1.6
+    }
+
+    .mini-card .btn {
+      margin-top: 12px
+    }
+
+    .contact {
+      padding-bottom: 30px
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #f4512c, #ff8c42);
+      border-radius: 32px;
+      color: #fff;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: 0 26px 60px rgba(244, 81, 44, .22)
+    }
+
+    .contact-box h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin: 0 0 10px
+    }
+
+    .contact-box p {
+      margin: 0;
+      max-width: 620px;
+      color: rgba(255, 255, 255, .86);
+      line-height: 1.55
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .contact-actions .btn-secondary {
+      background: #fff;
+      color: #2a1914;
+      border-color: #fff
+    }
+
+    footer {
+      padding: 26px 0 50px;
+      color: #776d67;
+      font-size: 12px
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 22px
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      font-weight: 800
+    }
+
+    .footer-links a:hover {
+      color: var(--accent)
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(12, 9, 8, .56);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+      padding: 18px
+    }
+
+    .modal.open {
+      display: flex
+    }
+
+    .modal-card {
+      width: min(600px, 100%);
+      max-height: calc(100dvh - 36px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background: #fff;
+      border-radius: 26px;
+      padding: 25px;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, .24);
+      position: relative;
+      margin: auto;
+      animation: modalIn .25s ease
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 13px;
+      border: 0;
+      background: #f6efeb;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 19px
+    }
+
+    .modal h3 {
+      font-size: 27px;
+      letter-spacing: -.045em;
+      margin: 0 35px 7px 0
+    }
+
+    .modal-sub {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px
+    }
+
+    .success {
+      display: none;
+      padding: 18px;
+      border-radius: 16px;
+      background: #f4fbf6;
+      border: 1px solid #ccead2;
+      color: #2b663a;
+      font-weight: 800
+    }
+
+    .success.show {
+      display: block
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(.98)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .mobile-cta {
+      display: none
+    }
+
+    @media(max-width:1000px) {
+      .nav-links {
+        display: none
+      }
+
+      .menu-btn {
+        display: block
+      }
+
+      .hero-grid,
+      .estimator-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding-top: 54px
+      }
+
+      .hero-visual {
+        min-height: 410px
+      }
+
+      .products-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 200px
+      }
+
+      .gallery-item:first-child {
+        grid-row: auto;
+        grid-column: 1 / 3
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr
+      }
+
+      .phone {
+        display: none
+      }
+    }
+
+    @media(max-width:680px) {
+      .container {
+        width: min(100% - 24px, 1160px)
+      }
+
+      .nav {
+        height: 68px
+      }
+
+      .nav-actions .lang {
+        order: 2
+      }
+
+      .hero {
+        padding: 38px 0 30px;
+        min-height: auto
+      }
+
+      .hero-grid {
+        gap: 24px
+      }
+
+      .hero-visual {
+        min-height: 330px
+      }
+
+      .badge-one {
+        left: 8px;
+        top: 15px
+      }
+
+      .badge-two {
+        right: 8px
+      }
+
+      .float-badge {
+        font-size: 10px;
+        padding: 10px 11px
+      }
+
+      .visual-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 13px
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr
+      }
+
+      .btn {
+        width: 100%
+      }
+
+      .hero-note {
+        gap: 11px;
+        display: grid
+      }
+
+      .stats {
+        padding-bottom: 52px
+      }
+
+      .stats-grid {
+        gap: 9px
+      }
+
+      .stat {
+        padding: 17px 9px
+      }
+
+      .stat b {
+        font-size: 22px
+      }
+
+      section {
+        padding: 64px 0
+      }
+
+      .section-head {
+        display: block
+      }
+
+      .section-copy {
+        margin-top: 13px
+      }
+
+      .products-grid,
+      .process-grid {
+        grid-template-columns: 1fr
+      }
+
+      .product {
+        padding: 20px
+      }
+
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .estimate-card,
+      .info-card {
+        padding: 20px
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 190px 150px
+      }
+
+      .gallery-item:first-child {
+        grid-column: 1 / 3
+      }
+
+      .reviews-main,
+      .mini-card {
+        padding: 20px
+      }
+
+      .contact-box {
+        padding: 26px;
+        border-radius: 26px
+      }
+
+      .contact-actions {
+        display: grid;
+        grid-template-columns: 1fr
+      }
+
+      .contact-actions .btn {
+        width: 100%
+      }
+
+      .mobile-cta {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        z-index: 50;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        background: rgba(255, 255, 255, .9);
+        border: 1px solid rgba(234, 223, 216, .9);
+        backdrop-filter: blur(15px);
+        border-radius: 17px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, .12)
+      }
+
+      .mobile-cta .btn {
+        min-height: 46px;
+        font-size: 13px
+      }
+
+      .mobile-cta .btn-secondary {
+        background: #fff
+      }
+
+      .footer-inner {
+        padding-bottom: 72px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="MAURAS"><span class="brand-mark">M</span>MAURAS</a>
+      <nav class="nav-links" aria-label="Главное меню">
+        <a href="#services" data-i18n="navServices">Услуги</a>
+        <a href="#process" data-i18n="navProcess">Как работаем</a>
+        <a href="#estimate" data-i18n="navEstimate">Рассчитать</a>
+        <a href="#contacts" data-i18n="navContacts">Контакты</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" id="langBtn" type="button"><span id="ruLang" class="active">RU</span><span> / </span><span
+            id="uzLang">UZ</span></button>
+        <a class="phone" href="tel:+998911323100">+998 91 132-31-00</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><i></i><span data-i18n="eyebrow">Упаковка и печать в Ташкенте</span></span>
+          <h1 data-i18n="heroTitle">Упаковка, которую <span class="accent">замечают</span></h1>
+          <p class="lead" data-i18n="heroLead">Гибкая упаковка, пакеты, этикетки, флексография и глубокая печать.
+            Поможем пройти путь от идеи и дизайна до готового тиража.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary open-modal" type="button" data-i18n="heroCta">Рассчитать упаковку →</button>
+            <a class="btn btn-secondary" href="tel:+998911323100" data-i18n="heroCall">Позвонить</a>
+          </div>
+          <div class="hero-note">
+            <span><b class="check">✓</b> <span data-i18n="heroNote1">Бесплатный дизайн при заказе</span></span>
+            <span><b class="check">✓</b> <span data-i18n="heroNote2">Бесплатная доставка по Ташкенту</span></span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-card">
+            <img
+              src="https://lh3.googleusercontent.com/grass-cs/ACvplmM39tXsmBrKHmsbwZacOn7UIwhz0jMTJU4dBS6TycszNZUKm28nct1kgP5KY21bMFoPYNo_UYgw2nAVQc8eLIw4WuVJyrLTsaQnNwTqnQUSmX6CX8FMFyG4msEPp0AMFgvrFOhp=w408-h306-k-no"
+              alt="MAURAS — производство упаковки" loading="eager" />
+            <div class="visual-caption"><b data-i18n="visualTitle">Производство упаковки под задачу</b><span
+                data-i18n="visualSub">Гибкая упаковка • пакеты • печать • этикетки</span></div>
+          </div>
+          <div class="float-badge badge-one"><span class="badge-dot"></span><span data-i18n="badge1">5.0 ★ на
+              Google</span></div>
+          <div class="float-badge badge-two">⚡ <span data-i18n="badge2">Быстрая услуга</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat reveal"><b>5.0</b><span data-i18n="stat1">рейтинг Google • 4 отзыва</span></div>
+        <div class="stat reveal"><b>4+</b><span data-i18n="stat2">направления упаковки</span></div>
+        <div class="stat reveal"><b>UZ</b><span data-i18n="stat3">Ташкент и по Узбекистану</span></div>
+        <div class="stat reveal"><b>02</b><span data-i18n="stat4">формата связи: звонок + SMS</span></div>
+      </div>
+    </section>
+
+    <section id="services" class="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker" data-i18n="kickerServices">Что производим</div>
+            <h2 class="section-title" data-i18n="servicesTitle">Всё, что нужно бренду для упаковки</h2>
+          </div>
+          <p class="section-copy" data-i18n="servicesCopy">Не просто печать. Подберём формат, материал и способ
+            нанесения изображения под продукт и тираж.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product reveal">
+            <div class="product-icon">◫</div>
+            <h3 data-i18n="p1t">Гибкая упаковка</h3>
+            <p data-i18n="p1p">Плёнки, рулонные материалы и упаковка для пищевой, фармацевтической и промышленной
+              продукции.</p><span class="tag" data-i18n="pTag1">под заказ</span>
+          </article>
+          <article class="product reveal">
+            <div class="product-icon">▤</div>
+            <h3 data-i18n="p2t">Пакеты</h3>
+            <p data-i18n="p2p">Брендированные пакеты и индивидуальная упаковка под ваш продукт, размер и дизайн.</p>
+            <span class="tag" data-i18n="pTag2">брендинг</span>
+          </article>
+          <article class="product reveal">
+            <div class="product-icon">▣</div>
+            <h3 data-i18n="p3t">Этикетки</h3>
+            <p data-i18n="p3p">Самоклеящиеся, тканые и печатные этикетки для маркировки и узнаваемости продукта.</p>
+            <span class="tag" data-i18n="pTag3">точная печать</span>
+          </article>
+          <article class="product reveal">
+            <div class="product-icon">✦</div>
+            <h3 data-i18n="p4t">Флексо & глубокая печать</h3>
+            <p data-i18n="p4p">Нанесение изображения на гибкие материалы и плёнки с акцентом на качество и стабильность
+              тиража.</p><span class="tag" data-i18n="pTag4">производство</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker" data-i18n="kickerProcess">Как работаем</div>
+            <h2 class="section-title" data-i18n="processTitle">От идеи до готовой упаковки</h2>
+          </div>
+          <p class="section-copy" data-i18n="processCopy">Чем точнее исходные данные, тем быстрее можно подготовить
+            расчёт и запустить заказ.</p>
+        </div>
+        <div class="process-grid">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <h3 data-i18n="s1t">Заявка</h3>
+            <p data-i18n="s1p">Вы оставляете тип упаковки, тираж, размер и контакт.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <h3 data-i18n="s2t">Подбор решения</h3>
+            <p data-i18n="s2p">Уточняем материал, технологию печати и требования к продукции.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">03</div>
+            <h3 data-i18n="s3t">Дизайн и согласование</h3>
+            <p data-i18n="s3p">По данным компании, дизайн при заказе упаковки предоставляется бесплатно.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">04</div>
+            <h3 data-i18n="s4t">Производство</h3>
+            <p data-i18n="s4p">После согласования запускаем производство и организуем доставку по Ташкенту.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimate" class="estimator">
+      <div class="container estimator-grid">
+        <div class="info-card reveal">
+          <div class="kicker" data-i18n="kickerEstimator">Быстрый расчёт</div>
+          <h3 data-i18n="estTitle">Опишите задачу — мы вернёмся с расчётом.</h3>
+          <p data-i18n="estCopy">Форма специально короткая: клиенту не нужно заполнять анкету на 20 полей. Остальное
+            менеджер уточнит по телефону.</p>
+          <div class="info-list">
+            <div><b>✓</b><span data-i18n="i1">Тип упаковки</span></div>
+            <div><b>✓</b><span data-i18n="i2">Тираж и размеры</span></div>
+            <div><b>✓</b><span data-i18n="i3">Контакт для связи</span></div>
+          </div>
+          <a class="btn btn-secondary" href="tel:+998911323100" data-i18n="callNow">+998 91 132-31-00</a>
+        </div>
+
+        <div class="estimate-card reveal">
+          <form id="leadForm">
+            <div class="form-row">
+              <div class="field"><label for="type" data-i18n="fType">Что нужно?</label><select id="type" name="type"
+                  required>
+                  <option value="Гибкая упаковка">Гибкая упаковка</option>
+                  <option value="Пакеты">Пакеты</option>
+                  <option value="Этикетки">Этикетки</option>
+                  <option value="Флексопечать">Флексопечать</option>
+                  <option value="Глубокая печать">Глубокая печать</option>
+                </select></div>
+              <div class="field"><label for="qty" data-i18n="fQty">Тираж</label><input id="qty" name="qty"
+                  placeholder="Например, 10 000" /></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="size" data-i18n="fSize">Размер / формат</label><input id="size" name="size"
+                  placeholder="Например, 180×260 мм" /></div>
+              <div class="field"><label for="contact" data-i18n="fContact">Ваш телефон</label><input id="contact"
+                  name="contact" type="tel" placeholder="+998 __ ___ __ __" required /></div>
+            </div>
+            <div class="field"><label for="note" data-i18n="fNote">Комментарий</label><textarea id="note" name="note"
+                placeholder="Материал, цветность, дизайн или любые детали"></textarea></div>
+            <div class="form-help" data-i18n="formHelp">Заполните форму и выберите SMS или Telegram — сообщение
+              сформируется автоматически и подставится в выбранный канал.</div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="button" data-send="sms" data-i18n="smsBtn">Отправить по SMS</button>
+              <button class="btn btn-secondary" type="button" data-send="telegram" data-i18n="telegramBtn">Отправить в
+                Telegram</button>
+              <a class="btn btn-secondary" href="tel:+998911323100" data-i18n="callBtn">Позвонить</a>
+            </div>
+            <div class="success" id="successBox" data-i18n="success">Заявка сформирована. Если SMS не открылось
+              автоматически, позвоните по +998 91 132-31-00.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker" data-i18n="kickerGallery">Фото</div>
+            <h2 class="section-title" data-i18n="galleryTitle">Производство и результат</h2>
+          </div>
+          <p class="section-copy" data-i18n="galleryCopy">Фотографии взяты из представленных материалов карточки MAURAS.
+            При запуске сайта их можно заменить на оригинальные фирменные фото высокого разрешения.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal"><img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmeuISYyXQQJmgBoGPyh4GaoClWqBHIovsLzU1oclsnKtRogLDiIxx6j-Hs7ck_YqnuTSb0h19m6gub5T1QOuXvf-a4hwI2tHVvkkiulx1UIIknAw-yupLQhX_tAGi4eSa4-wGx=w397-h298-k-no"
+              alt="Производство MAURAS" loading="lazy" /><span class="gallery-label" data-i18n="g1">MAURAS</span></div>
+          <div class="gallery-item reveal"><img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWntrJXVarfKuYZ_BZUz0jHeQhu7_ZY_wpGKKvQc1Uao3YFJHlg4-7T6cDKw-nv3-Xn0Jxi_IWPxBY6D5dRn9eOjpquV2dCqwllZXu3RcC1ysq5zZ8fuOXiVdeglp5QAxnS7uV=w314-h298-k-no"
+              alt="Упаковка MAURAS" loading="lazy" /><span class="gallery-label" data-i18n="g2">Упаковка</span></div>
+          <div class="gallery-item reveal" style="background:linear-gradient(135deg,#fff1e6,#f3d7c7)">
+            <div
+              style="height:100%;display:grid;place-items:center;font-weight:950;font-size:30px;letter-spacing:-.05em;color:#8d3e27">
+              FLEXO<br><span style="font-size:14px;letter-spacing:.1em">PRINT</span></div>
+          </div>
+          <div class="gallery-item reveal" style="background:linear-gradient(135deg,#1f1917,#4b3023)">
+            <div style="height:100%;display:grid;place-items:center;text-align:center;color:#fff;padding:20px">
+              <div>
+                <div style="font-size:33px;font-weight:950;letter-spacing:-.06em">MAURAS</div>
+                <div style="opacity:.72;font-size:12px;margin-top:5px" data-i18n="g4">упаковка под ваш бренд</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="container reviews-grid">
+        <div class="reviews-main reveal">
+          <div class="rating-line">
+            <div class="rating-big">5.0</div>
+            <div>
+              <div class="stars">★★★★★</div>
+              <div style="margin-top:3px;color:#756c66;font-size:13px;font-weight:800" data-i18n="reviewsMeta">4 отзыва
+                в Google</div>
+            </div>
+          </div>
+          <div class="review">
+            <div class="avatar">R</div>
+            <div><b>RESPECT 777</b>
+              <p data-i18n="r1">«Очень хорошая компания» — отзыв в карточке Google.</p>
+            </div>
+          </div>
+          <div class="review">
+            <div class="avatar">J</div>
+            <div><b>Jalol Abdurayimov</b>
+              <p>“very professional, fast and reliable”</p>
+            </div>
+          </div>
+          <div class="review">
+            <div class="avatar">Ф</div>
+            <div><b>Фарзона Мирхамидова</b>
+              <p data-i18n="r3">Положительная оценка в карточке Google.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card reveal">
+          <div class="kicker" data-i18n="kickerReview">Для бизнеса</div>
+          <h3 data-i18n="reviewTitle">Нужно не просто «красиво», а чтобы клиент оставил заявку.</h3>
+          <p data-i18n="reviewCopy">Поэтому на сайте главная кнопка ведёт в короткую форму, а контакт остаётся видимым
+            на каждом экране.</p><a class="btn btn-primary open-modal" href="#estimate" data-i18n="reviewCta">Получить
+            расчёт →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="contact">
+      <div class="container contact-box reveal">
+        <div>
+          <div class="kicker" style="color:#fff;opacity:.8">MAURAS • TASHKENT</div>
+          <h2 data-i18n="contactTitle">Готовы обсудить упаковку?</h2>
+          <p data-i18n="contactCopy">Чапаната Street, Ташкент. Основной телефон: +998 91 132-31-00. Также доступны
+            дополнительные номера компании.</p>
+        </div>
+        <div class="contact-actions"><a class="btn btn-secondary" href="tel:+998911323100"
+            data-i18n="contactCall">Позвонить</a><button class="btn btn-secondary open-modal" type="button"
+            data-i18n="contactForm">Оставить заявку</button><a class="btn btn-secondary"
+            href="https://www.instagram.com/mauras_llc/" target="_blank" rel="noopener"
+            data-i18n="instagram">Instagram</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© MAURAS. <span data-i18n="footer">Изготовление упаковки и печать в Ташкенте.</span></div>
+      <div class="footer-links"><a
+          href="https://www.google.com/maps/search/?api=1&query=Chapanata%20Street%20100097%20Tashkent" target="_blank"
+          rel="noopener" data-i18n="map">Открыть на карте</a><a href="https://www.instagram.com/mauras_llc/"
+          target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="tel:+998911323100" data-i18n="mobileCall">Позвонить</a>
+    <button class="btn btn-secondary open-modal" type="button" data-i18n="mobileQuote">Расчёт</button>
+  </div>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Close">×</button>
+      <h3 id="modalTitle" data-i18n="modalTitle">Быстрый расчёт упаковки</h3>
+      <div class="modal-sub" data-i18n="modalSub">Оставьте контакт и пару деталей — сформируем SMS с готовой заявкой.
+      </div>
+      <form id="modalForm">
+        <div class="form-row">
+          <div class="field"><label for="mType" data-i18n="fType">Что нужно?</label><select id="mType">
+              <option>Гибкая упаковка</option>
+              <option>Пакеты</option>
+              <option>Этикетки</option>
+              <option>Флексопечать</option>
+              <option>Глубокая печать</option>
+            </select></div>
+          <div class="field"><label for="mQty" data-i18n="fQty">Тираж</label><input id="mQty" placeholder="10 000" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="mContact" data-i18n="fContact">Ваш телефон</label><input id="mContact"
+              type="tel" required placeholder="+998 __ ___ __ __" /></div>
+          <div class="field"><label for="mSize" data-i18n="fSize">Размер</label><input id="mSize"
+              placeholder="180×260 мм" /></div>
+        </div>
+        <div class="field"><label for="mNote" data-i18n="fNote">Комментарий</label><textarea id="mNote"
+            placeholder="Что важно учесть?"></textarea></div>
+        <div class="form-actions">
+          <button class="btn btn-primary" type="button" data-send="sms" data-i18n="smsBtn">Отправить по SMS</button>
+          <button class="btn btn-secondary" type="button" data-send="telegram" data-i18n="telegramBtn">Отправить в
+            Telegram</button>
+        </div>
+        <div class="success" id="modalSuccess" data-i18n="success">Заявка сформирована. Выберите SMS или Telegram —
+          текст уже будет подготовлен.</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const PHONE = '998911323100';
+    const translations = {
+      ru: {
+        navServices: 'Услуги', navProcess: 'Как работаем', navEstimate: 'Рассчитать', navContacts: 'Контакты',
+        eyebrow: 'Упаковка и печать в Ташкенте', heroTitle: 'Упаковка, которую <span class="accent">замечают</span>', heroLead: 'Гибкая упаковка, пакеты, этикетки, флексография и глубокая печать. Поможем пройти путь от идеи и дизайна до готового тиража.', heroCta: 'Рассчитать упаковку →', heroCall: 'Позвонить', heroNote1: 'Бесплатный дизайн при заказе', heroNote2: 'Бесплатная доставка по Ташкенту', visualTitle: 'Производство упаковки под задачу', visualSub: 'Гибкая упаковка • пакеты • печать • этикетки', badge1: '5.0 ★ на Google', badge2: 'Быстрая услуга',
+        stat1: 'рейтинг Google • 4 отзыва', stat2: 'направления упаковки', stat3: 'Ташкент и по Узбекистану', stat4: 'формата связи: звонок + SMS',
+        kickerServices: 'Что производим', servicesTitle: 'Всё, что нужно бренду для упаковки', servicesCopy: 'Не просто печать. Подберём формат, материал и способ нанесения изображения под продукт и тираж.', p1t: 'Гибкая упаковка', p1p: 'Плёнки, рулонные материалы и упаковка для пищевой, фармацевтической и промышленной продукции.', pTag1: 'под заказ', p2t: 'Пакеты', p2p: 'Брендированные пакеты и индивидуальная упаковка под ваш продукт, размер и дизайн.', pTag2: 'брендинг', p3t: 'Этикетки', p3p: 'Самоклеящиеся, тканые и печатные этикетки для маркировки и узнаваемости продукта.', pTag3: 'точная печать', p4t: 'Флексо & глубокая печать', p4p: 'Нанесение изображения на гибкие материалы и плёнки с акцентом на качество и стабильность тиража.', pTag4: 'производство',
+        kickerProcess: 'Как работаем', processTitle: 'От идеи до готовой упаковки', processCopy: 'Чем точнее исходные данные, тем быстрее можно подготовить расчёт и запустить заказ.', s1t: 'Заявка', s1p: 'Вы оставляете тип упаковки, тираж, размер и контакт.', s2t: 'Подбор решения', s2p: 'Уточняем материал, технологию печати и требования к продукции.', s3t: 'Дизайн и согласование', s3p: 'По данным компании, дизайн при заказе упаковки предоставляется бесплатно.', s4t: 'Производство', s4p: 'После согласования запускаем производство и организуем доставку по Ташкенту.',
+        kickerEstimator: 'Быстрый расчёт', estTitle: 'Опишите задачу — мы вернёмся с расчётом.', estCopy: 'Форма специально короткая: клиенту не нужно заполнять анкету на 20 полей. Остальное менеджер уточнит по телефону.', i1: 'Тип упаковки', i2: 'Тираж и размеры', i3: 'Контакт для связи', callNow: '+998 91 132-31-00', fType: 'Что нужно?', fQty: 'Тираж', fSize: 'Размер / формат', fContact: 'Ваш телефон', fNote: 'Комментарий', formHelp: 'Заполните форму и выберите SMS или Telegram — сообщение сформируется автоматически и подставится в выбранный канал.', smsBtn: 'Отправить по SMS', telegramBtn: 'Отправить в Telegram', callBtn: 'Позвонить', success: 'Заявка сформирована. Выберите SMS или Telegram — текст уже будет подготовлен.',
+        kickerGallery: 'Фото', galleryTitle: 'Производство и результат', galleryCopy: 'Фотографии взяты из представленных материалов карточки MAURAS. При запуске сайта их можно заменить на оригинальные фирменные фото высокого разрешения.', g1: 'MAURAS', g2: 'Упаковка', g4: 'упаковка под ваш бренд',
+        kickerReview: 'Для бизнеса', reviewTitle: 'Нужно не просто «красиво», а чтобы клиент оставил заявку.', reviewCopy: 'Поэтому на сайте главная кнопка ведёт в короткую форму, а контакт остаётся видимым на каждом экране.', reviewCta: 'Получить расчёт →', reviewsMeta: '4 отзыва в Google', r1: '«Очень хорошая компания» — отзыв в карточке Google.', r3: 'Положительная оценка в карточке Google.',
+        contactTitle: 'Готовы обсудить упаковку?', contactCopy: 'Чапаната Street, Ташкент. Основной телефон: +998 91 132-31-00. Также доступны дополнительные номера компании.', contactCall: 'Позвонить', contactForm: 'Оставить заявку', instagram: 'Instagram', footer: 'Изготовление упаковки и печать в Ташкенте.', map: 'Открыть на карте', mobileCall: 'Позвонить', mobileQuote: 'Расчёт', modalTitle: 'Быстрый расчёт упаковки', modalSub: 'Оставьте контакт и пару деталей — сформируем готовое сообщение для SMS или Telegram.'
+      },
+      uz: {
+        navServices: 'Xizmatlar', navProcess: 'Jarayon', navEstimate: 'Hisoblash', navContacts: 'Aloqa',
+        eyebrow: 'Toshkentda qadoqlash va bosma', heroTitle: 'Brendingiz uchun <span class="accent">ko‘rinadigan</span> qadoq', heroLead: 'Yumshoq qadoqlash, paketlar, etiketkalar, fleksografiya va chuqur bosma. G‘oyadan tayyor tirajgacha yordam beramiz.', heroCta: 'Qadoqni hisoblash →', heroCall: 'Qo‘ng‘iroq', heroNote1: 'Buyurtmada bepul dizayn', heroNote2: 'Toshkent bo‘ylab bepul yetkazib berish', visualTitle: 'Vazifaga mos qadoqlash ishlab chiqarish', visualSub: 'Yumshoq qadoq • paket • bosma • etiketka', badge1: 'Google’da 5.0 ★', badge2: 'Tez xizmat',
+        stat1: 'Google reytingi • 4 ta sharh', stat2: 'qadoqlash yo‘nalishi', stat3: 'Toshkent va O‘zbekiston', stat4: 'aloqa: qo‘ng‘iroq + SMS',
+        kickerServices: 'Nimalar ishlab chiqariladi', servicesTitle: 'Brendingiz uchun kerakli qadoqlash', servicesCopy: 'Faqat bosma emas. Mahsulot va tirajga mos format, material va bosma usulini tanlaymiz.', p1t: 'Yumshoq qadoqlash', p1p: 'Oziq-ovqat, farmatsevtika va sanoat mahsulotlari uchun plyonka, rulon materiallar va qadoqlash.', pTag1: 'buyurtma asosida', p2t: 'Paketlar', p2p: 'Mahsulotingiz, o‘lchamingiz va dizayningizga mos brendli paketlar.', pTag2: 'brending', p3t: 'Etiketkalar', p3p: 'Mahsulotni belgilash va brendni tanitish uchun yopishqoq, matoli va bosma etiketkalar.', pTag3: 'aniq bosma', p4t: 'Flexo & chuqur bosma', p4p: 'Yumshoq material va plyonkalarga sifatli va barqaror tiraj bilan tasvir tushirish.', pTag4: 'ishlab chiqarish',
+        kickerProcess: 'Qanday ishlaymiz', processTitle: 'G‘oyadan tayyor qadoqqacha', processCopy: 'Boshlang‘ich ma’lumotlar aniq bo‘lsa, hisob va buyurtma jarayoni tezroq bo‘ladi.', s1t: 'So‘rov', s1p: 'Qadoq turi, tiraj, o‘lcham va aloqa ma’lumotingizni qoldirasiz.', s2t: 'Yechim tanlovi', s2p: 'Material, bosma texnologiyasi va mahsulot talablari aniqlanadi.', s3t: 'Dizayn va tasdiqlash', s3p: 'Kompaniya ma’lumotiga ko‘ra, qadoq buyurtmasida dizayn bepul taqdim etiladi.', s4t: 'Ishlab chiqarish', s4p: 'Tasdiqlangandan so‘ng ishlab chiqarish boshlanadi va Toshkent bo‘ylab yetkazib berish tashkil qilinadi.',
+        kickerEstimator: 'Tez hisob', estTitle: 'Vazifani yozing — hisob bilan qaytamiz.', estCopy: 'Forma ataylab qisqa: mijozga 20 ta maydonni to‘ldirish shart emas. Qolganini menejer telefon orqali aniqlashtiradi.', i1: 'Qadoq turi', i2: 'Tiraj va o‘lcham', i3: 'Aloqa uchun telefon', callNow: '+998 91 132-31-00', fType: 'Nima kerak?', fQty: 'Tiraj', fSize: 'O‘lcham / format', fContact: 'Telefoningiz', fNote: 'Izoh', formHelp: 'Formani to‘ldiring va SMS yoki Telegramni tanlang — xabar avtomatik tayyorlanib, tanlangan kanalga qo‘yiladi.', smsBtn: 'SMS orqali yuborish', telegramBtn: 'Telegram orqali yuborish', callBtn: 'Qo‘ng‘iroq', success: 'So‘rov tayyorlandi. SMS yoki Telegramni tanlang — matn oldindan tayyor bo‘ladi.',
+        kickerGallery: 'Foto', galleryTitle: 'Ishlab chiqarish va natija', galleryCopy: 'Fotosuratlar MAURAS kompaniyasi kartochkasida taqdim etilgan materiallardan olingan. Sayt ishga tushganda ularni yuqori sifatli original rasmlar bilan almashtirish mumkin.', g1: 'MAURAS', g2: 'Qadoqlash', g4: 'brendingiz uchun qadoq',
+        kickerReview: 'Biznes uchun', reviewTitle: 'Maqsad shunchaki «chiroyli» emas — mijoz so‘rov qoldirsin.', reviewCopy: 'Shuning uchun asosiy tugma qisqa forma tomon olib boradi, aloqa esa har bir ekranda ko‘rinib turadi.', reviewCta: 'Hisob olish →', reviewsMeta: 'Google’da 4 ta sharh', r1: '«Juda yaxshi kompaniya» — Google kartochkasidagi sharh.', r3: 'Google kartochkasidagi ijobiy baho.',
+        contactTitle: 'Qadoqlashni muhokama qilamizmi?', contactCopy: 'Chapanata Street, Toshkent. Asosiy telefon: +998 91 132-31-00. Kompaniyaning qo‘shimcha raqamlari ham mavjud.', contactCall: 'Qo‘ng‘iroq', contactForm: 'So‘rov qoldirish', instagram: 'Instagram', footer: 'Toshkentda qadoqlash ishlab chiqarish va bosma.', map: 'Xaritada ochish', mobileCall: 'Qo‘ng‘iroq', mobileQuote: 'Hisob', modalTitle: 'Tezkor qadoqlash hisobi', modalSub: 'Telefon va bir nechta ma’lumotni qoldiring — SMS yoki Telegram uchun tayyor xabar shakllantiramiz.'
+      }
+    };
+    let lang = localStorage.getItem('mauras-lang') || 'ru';
+    const langBtn = document.getElementById('langBtn');
+    function setLang(next) {
+      lang = next; localStorage.setItem('mauras-lang', lang);
+      document.documentElement.lang = lang;
+      document.getElementById('ruLang').classList.toggle('active', lang === 'ru');
+      document.getElementById('uzLang').classList.toggle('active', lang === 'uz');
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n; if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+      });
+    }
+    langBtn.addEventListener('click', () => { uiBeep('tap'); setLang(lang === 'ru' ? 'uz' : 'ru') });
+    setLang(lang);
+
+    const modal = document.getElementById('modal');
+    function openModal(e) { if (e) e.preventDefault(); uiBeep('tap'); modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); setTimeout(() => document.getElementById('mContact').focus(), 120) }
+    function closeModal() { uiBeep('tap'); modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true') }
+    document.querySelectorAll('.open-modal').forEach(el => el.addEventListener('click', openModal));
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal() });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal() });
+
+    function buildMessage(data) {
+      const title = lang === 'ru' ? 'MAURAS — заявка на упаковку' : 'MAURAS — qadoqlash bo‘yicha so‘rov';
+      const labels = lang === 'ru' ? { type: 'Тип', qty: 'Тираж', size: 'Размер', phone: 'Телефон', note: 'Комментарий' } : { type: 'Turi', qty: 'Tiraj', size: 'O‘lcham', phone: 'Telefon', note: 'Izoh' };
+      return `${title}\n\n${labels.type}: ${data.type}\n${labels.qty}: ${data.qty || '—'}\n${labels.size}: ${data.size || '—'}\n${labels.phone}: ${data.phone}\n${labels.note}: ${data.note || '—'}`;
+    }
+    function showSuccess(el, text) {
+      if (!el) return;
+      if (text) el.textContent = text;
+      el.classList.add('show');
+    }
+    async function copyMessage(raw) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(raw);
+          return true;
+        }
+      } catch (err) { }
+      return false;
+    }
+    function isMobileDevice() {
+      return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    }
+    function sendTelegram(data, successEl) {
+      const raw = buildMessage(data);
+      // Telegram supports phone-number deep links with prefilled draft text.
+      // Open it in a NEW tab/window so the external Telegram page is never loaded
+      // inside a site preview iframe (which can show a "content blocked" screen).
+      const url = `https://t.me/+${PHONE}?text=${encodeURIComponent(raw)}`;
+      copyMessage(raw);
+
+      const popup = window.open(url, '_blank', 'noopener,noreferrer');
+      if (!popup) {
+        // Popup blockers may refuse window.open. Use a temporary real anchor with
+        // target=_blank; this is triggered directly by the user's click.
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+
+      showSuccess(successEl, lang === 'ru'
+        ? 'Telegram открыт в новой вкладке. Текст заявки уже подготовлен в чате.'
+        : 'Telegram yangi oynada ochildi. So‘rov matni chatda oldindan tayyor.');
+    }
+    async function sendSms(data, successEl) {
+      const raw = buildMessage(data);
+      // Keep the desktop browser on the site: navigating a normal desktop browser to an sms: URI
+      // can show a provider/preview "content blocked" page because there is no registered SMS handler.
+      // The exact request is copied first, so it is ready to paste into any desktop SMS app.
+      const copied = await copyMessage(raw);
+      if (isMobileDevice()) {
+        const encoded = encodeURIComponent(raw);
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const url = `sms:+${PHONE}${isIOS ? '&' : '?'}body=${encoded}`;
+        showSuccess(successEl, lang === 'ru'
+          ? 'Сообщение подготовлено для SMS на +998 91 132-31-00. Откроется приложение сообщений.'
+          : 'Xabar +998 91 132-31-00 raqamiga SMS uchun tayyorlandi. Xabarlar ilovasi ochiladi.');
+        setTimeout(() => { try { window.location.assign(url); } catch (err) { } }, 40);
+      } else {
+        showSuccess(successEl, lang === 'ru'
+          ? (copied ? 'Заявка скопирована. На компьютере браузер не может надёжно открыть SMS напрямую — вставьте готовый текст в приложение сообщений.' : 'Заявка подготовлена. На компьютере откройте приложение сообщений и вставьте текст вручную.')
+          : (copied ? 'So‘rov nusxalandi. Kompyuter brauzeri SMSni to‘g‘ridan-to‘g‘ri ochishni kafolatlamaydi — tayyor matnni xabarlar ilovasiga qo‘ying.' : 'So‘rov tayyor. Kompyuterda xabarlar ilovasini ochib, matnni qo‘lda joylashtiring.'));
+      }
+    }
+    function readLeadForm(form) {
+      return { type: form.type.value, qty: form.qty.value, size: form.size.value, phone: form.contact.value, note: form.note.value };
+    }
+    function readModalForm() {
+      return { type: document.getElementById('mType').value, qty: document.getElementById('mQty').value, size: document.getElementById('mSize').value, phone: document.getElementById('mContact').value, note: document.getElementById('mNote').value };
+    }
+    function handleSendButton(btn, channel) {
+      const form = btn.closest('form');
+      const data = form.id === 'leadForm' ? readLeadForm(form) : readModalForm();
+      const successEl = form.id === 'leadForm' ? document.getElementById('successBox') : document.getElementById('modalSuccess');
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      uiBeep('success');
+      if (channel === 'telegram') sendTelegram(data, successEl);
+      else sendSms(data, successEl);
+    }
+    document.querySelectorAll('[data-send="sms"]').forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      handleSendButton(btn, 'sms');
+    }));
+    document.querySelectorAll('[data-send="telegram"]').forEach(btn => btn.addEventListener('click', e => {
+      e.preventDefault();
+      handleSendButton(btn, 'telegram');
+    }));
+
+    // Smooth reveal animations
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target) } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Subtle UI sound using Web Audio API — starts only after user interaction, so no autoplay violation.
+    let audioCtx;
+    function uiBeep(type = 'tap') {
+      try {
+        audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
+        const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+        o.type = 'sine'; o.frequency.value = type === 'success' ? 720 : 430;
+        g.gain.setValueAtTime(.0001, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(type === 'success' ? .035 : .018, audioCtx.currentTime + .01); g.gain.exponentialRampToValueAtTime(.0001, audioCtx.currentTime + .11);
+        o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime + .12);
+      } catch (_) { }
+    }
+    document.querySelectorAll('button,.btn,a').forEach(el => el.addEventListener('click', () => uiBeep('tap'), { passive: true }));
+
+    // Mobile menu: compact jump menu without changing the one-page layout.
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn.addEventListener('click', () => {
+      uiBeep('tap');
+      const menu = [['#services', 'Услуги'], ['#process', 'Как работаем'], ['#estimate', 'Рассчитать'], ['#contacts', 'Контакты']];
+      const box = document.createElement('div');
+      box.style.cssText = 'position:fixed;top:68px;left:12px;right:12px;z-index:45;background:#fff;border:1px solid #eadfd8;border-radius:18px;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,.14);display:grid;gap:4px';
+      menu.forEach(([href, text]) => { const a = document.createElement('a'); a.href = href; a.textContent = translations[lang][href === '#services' ? 'navServices' : href === '#process' ? 'navProcess' : href === '#estimate' ? 'navEstimate' : 'navContacts']; a.style.cssText = 'padding:13px 14px;border-radius:12px;font-weight:800'; a.onclick = () => box.remove(); box.appendChild(a); });
+      document.body.appendChild(box);
+      const close = ev => { if (!box.contains(ev.target) && ev.target !== menuBtn) { box.remove(); document.removeEventListener('click', close) } }; setTimeout(() => document.addEventListener('click', close), 0);
+    });
+  </script>
+</body>
+
+</html>
